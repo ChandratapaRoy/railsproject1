@@ -17,7 +17,17 @@ class UsersController < ApplicationController
         @apple = Apple.all
         @u = params[:username]
         @p = params[:password]
-        @a1 = Apple.find(7)
+        #@a1 = Apple.authenticate('12345')
+        @apple.each do |a|
+            if a.username == @u
+                #@id = a.id
+                ##@a = Apple.find(@id)
+                @state = a.authenticate(@p)        
+            end
+        end
+        #@a = Apple.find(@id)
+        #@state = @a.authenticate(@p)
+=begin
         @apple.each do |a|
             if a.username == @u
                 @st = "true"
@@ -25,6 +35,7 @@ class UsersController < ApplicationController
                 @find = Apple.find(@id)
             end
         end
+=end
         #@u_find = Apple.find_by username: @u
         #@st = @u_find.authenticate(@u)
     end

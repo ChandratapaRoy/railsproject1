@@ -22,16 +22,12 @@
                         <td><input type="submit" value="Login"></td>
                     </tr>
                 </table>
-                <% if @st == "true" %>
+                <% if @state == "true" %>
                     <%= "Authenticated" %>
                 <% else %>
                     <%= "Unauthenticated" %>
                 <% end %>
-                <%= @a1.each do |f| %>
-                    <%= f.username %>
-                <% end %>
                 <%#= @en_pass %>
-                <%#= @p %>
                 <%#= @t %>
             </form>
         </center>    
